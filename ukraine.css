@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #EAEAEA;
+  color: #555555;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+#wrapper {
+  background-color: #FFFFFF;
+}
+
+header {
+  background-color: #0057B7;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header a:link,
+header a:visited {
+  color: #FFFFFF;
+}
+
+header a:hover {
+  color: #FFD700;
+}
+
+h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  padding: 0.5em;
+  letter-spacing: 0.15em;
+}
+
+nav {
+  text-align: center;
+  font-size: 120%;
+  font-weight: bold;
+  background-color: #FFFFFF;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+nav li {
+  border-bottom: none;
+}
+
+nav a {
+  text-decoration: none;
+  display: block;
+  padding: 0.75em 1em;
+}
+
+nav a:link {
+  color: #0057B7;
+}
+
+nav a:visited {
+  color: #336699;
+}
+
+nav a:hover {
+  color: #D17C00;
+}
+
+main {
+  display: block;
+  background-color: #FFFFFF;
+  padding: 1px 20px 20px 20px;
+}
+
+h2 {
+  color: #0057B7;
+  font-family: Georgia, "Times New Roman", serif;
+  text-shadow: 1px 1px #CCCCCC;
+}
+
+h3 {
+  color: #333333;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+main ul {
+  list-style-image: url(marker.gif);
+}
+
+.site-name {
+  color: #0057B7;
+  font-weight: bold;
+}
+
+#contact {
+  font-size: 90%;
+}
+
+footer {
+  background-color: #FFFFFF;
+  font-size: 75%;
+  font-style: italic;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  padding: 2em;
+}
+
+.hero {
+  height: 300px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+#homehero {
+  background-image: url(ukrainian-food.jpg);
+}
+
+/* Medium display */
+@media (min-width: 600px) {
+  section {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+}
+
+/* Large display */
+@media (min-width: 1024px) {
+  #wrapper {
+    margin: auto;
+    width: 80%;
+    border: 1px solid #333333;
+    box-shadow: 3px 3px 3px #333333;
+  }
+
+  @supports (display: grid) {
+    header {
+      grid-area: header;
+    }
+
+    nav {
+      grid-area: nav;
+    }
+
+    .hero {
+      grid-area: hero;
+    }
+
+    main {
+      grid-area: main;
+    }
+
+    footer {
+      grid-area: footer;
+    }
+
+    #wrapper {
+      display: grid;
+      grid-template:
+        "header header" auto
+        "nav nav" auto
+        "hero hero" 300px
+        "main main" auto
+        "footer footer" auto
+        / 1fr 1fr;
+    }
+  }
+}
