@@ -3,176 +3,242 @@
 }
 
 body {
-  background-color: #EAEAEA;
-  color: #555555;
+  background-color: #f4f7fb;
+  color: #222222;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
 #wrapper {
-  background-color: #FFFFFF;
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+header,
+main,
+footer {
+  background-color: #ffffff;
+  margin: 1.5em 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px #cccccc;
 }
 
 header {
-  background-color: #0057B7;
-  color: #FFFFFF;
   text-align: center;
-}
-
-header a {
-  text-decoration: none;
-}
-
-header a:link,
-header a:visited {
-  color: #FFFFFF;
-}
-
-header a:hover {
-  color: #FFD700;
+  padding: 2em;
+  background-color: #0057b7;
+  border-bottom: 8px solid #ffd700;
 }
 
 h1 {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  padding: 0.5em;
-  letter-spacing: 0.15em;
+  font-size: 3em;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  -webkit-text-stroke: 1px black;
 }
 
-nav {
-  text-align: center;
-  font-size: 120%;
-  font-weight: bold;
-  background-color: #FFFFFF;
-}
-
+/* NAV */
 nav ul {
   list-style-type: none;
-  margin: 0;
   padding: 0;
+  margin: 1.5em 0;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
+  gap: 1em;
+  justify-content: space-between;
 }
 
 nav li {
-  border-bottom: none;
+  background-color: #ffd700;
+  flex: 1;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px #cccccc;
 }
 
 nav a {
-  text-decoration: none;
   display: block;
-  padding: 0.75em 1em;
-}
-
-nav a:link {
-  color: #0057B7;
-}
-
-nav a:visited {
-  color: #336699;
+  padding: 0.9em;
+  color: #003b7a;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 nav a:hover {
-  color: #D17C00;
+  background-color: #0057b7;
+  color: #ffffff;
+  border-radius: 8px;
 }
 
+/* HERO */
+.hero {
+  position: relative;
+  height: 300px;
+  margin: 1.5em 0;
+  border-radius: 10px;
+  background-image: url("ukrainian-food.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 2em;
+  box-shadow: 0 4px 14px #cccccc;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 45%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
+}
+
+.hero h2 {
+  color: #ffffff;
+  font-size: 2.8em;
+  margin: 0;
+  max-width: 650px;
+  position: relative;
+  z-index: 1;
+  text-shadow: 2px 2px 6px #000000;
+}
+
+/* MAIN */
 main {
-  display: block;
-  background-color: #FFFFFF;
-  padding: 1px 20px 20px 20px;
+  padding: 2em;
+  border-top: 8px solid #ffd700;
 }
 
-h2 {
-  color: #0057B7;
-  font-family: Georgia, "Times New Roman", serif;
-  text-shadow: 1px 1px #CCCCCC;
-}
-
-h3 {
-  color: #333333;
-  font-family: Georgia, "Times New Roman", serif;
+main h2 {
+  color: #0057b7;
 }
 
 main ul {
-  list-style-image: url(marker.gif);
+  padding-left: 1.2em;
+}
+
+main li {
+  margin-bottom: 0.4em;
 }
 
 .site-name {
-  color: #0057B7;
+  color: #0057b7;
   font-weight: bold;
 }
 
 #contact {
-  font-size: 90%;
+  font-size: 95%;
+  border-left: 4px solid #ffd700;
+  padding-left: 1em;
 }
 
-footer {
-  background-color: #FFFFFF;
-  font-size: 75%;
-  font-style: italic;
+/* CARDS */
+.recipe-card {
+  background-color: #ffffff;
+  margin-bottom: 1.5em;
+  padding: 1.5em;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px #cccccc;
+  border-top: 6px solid #ffd700;
+}
+
+.recipe-text h3 {
+  color: #0057b7;
+  margin-top: 0;
+   font-size: 1.5em;
+}
+
+.recipe-text h4 {
+  margin: 0.6em 0 0.2em 0;
+}
+
+.recipe-text p,
+.recipe-text li {
+  line-height: 1.4;
+}
+
+.recipe-text ul {
+  padding-left: 1.2em;
+  margin-top: 0.2em;
+}
+
+/* RECIPE/CULTURE SIDE-BY-SIDE CARDS */
+.recipe-card:not(.intro-card) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+.recipe-card:not(.intro-card) .recipe-text {
+  flex: 1.5;
+}
+
+.recipe-card:not(.intro-card) img {
+  flex: 1;
+  width: 320px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px #999999;
+}
+
+.recipe-card:nth-of-type(2),
+.recipe-card:nth-of-type(4) {
+  flex-direction: row-reverse;
+}
+
+/* INTRO CARD */
+.intro-card {
   text-align: center;
-  font-family: Georgia, "Times New Roman", serif;
-  padding: 2em;
+  max-width: 900px;
+  margin: 0 auto 1.5em auto;
+  padding: 1.5em;
 }
 
-.hero {
-  height: 300px;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+.intro-card h2 {
+  color: #0057b7;
+  margin-bottom: 0.5em;
 }
 
-#homehero {
-  background-image: url(ukrainian-food.jpg);
+/* FOOTER */
+footer {
+  padding: 1.5em 2em;
+  display: flex;
+  justify-content: space-between;
+  background-color: #0057b7;
+  color: #ffffff;
 }
 
-/* Medium display */
-@media (min-width: 600px) {
-  section {
-    margin-left: 2em;
-    margin-right: 2em;
+footer a {
+  color: #ffd700;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+  nav ul,
+  footer {
+    flex-direction: column;
   }
-}
 
-/* Large display */
-@media (min-width: 1024px) {
-  #wrapper {
-    margin: auto;
-    width: 80%;
-    border: 1px solid #333333;
-    box-shadow: 3px 3px 3px #333333;
+  .hero {
+    height: 240px;
   }
 
-  @supports (display: grid) {
-    header {
-      grid-area: header;
-    }
+  .hero h2 {
+    font-size: 2em;
+  }
 
-    nav {
-      grid-area: nav;
-    }
+  .recipe-card:not(.intro-card) {
+    flex-direction: column !important;
+  }
 
-    .hero {
-      grid-area: hero;
-    }
-
-    main {
-      grid-area: main;
-    }
-
-    footer {
-      grid-area: footer;
-    }
-
-    #wrapper {
-      display: grid;
-      grid-template:
-        "header header" auto
-        "nav nav" auto
-        "hero hero" 300px
-        "main main" auto
-        "footer footer" auto
-        / 1fr 1fr;
-    }
+  .recipe-card:not(.intro-card) img {
+    width: 100%;
+    height: auto;
   }
 }
